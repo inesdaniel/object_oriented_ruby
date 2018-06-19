@@ -5,26 +5,13 @@
 # p " A #{item1["color"]} #{item1["name"]} costs $#{item1["price"]}"
 
 class Clothing
+  attr_reader :name, :color, :price
+  attr_writer :price
+
   def initialize(name, color, price)
     @name = name
     @color = color
     @price = price
-  end
-
-  def name
-    @name
-  end
-
-  def color
-    @color
-  end
-
-  def price
-    @price
-  end
-
-  def price=(input_price)
-    @price = input_price
   end
 
   def print_info
@@ -37,7 +24,7 @@ item1 = Clothing.new("shirt", "blue", 10)
 item2 = Clothing.new("pants", "black", 20)
 item3 = Clothing.new("shoes", "orange", 30)
 
-item1.price = 20
+item1.price= 20
 p item1.print_info
 p item2.print_info
 p item3.name
